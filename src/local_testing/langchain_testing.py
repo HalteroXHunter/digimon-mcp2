@@ -11,13 +11,20 @@ load_dotenv()
 async def main():
     client = MultiServerMCPClient(
         {
-            "digimon": {
-                "command": "uv",
-                "args": [
-                    "run",
-                    "/code/mcp-servers/digimon-mcp2/src/server.py",
-                ],
-                "transport": "stdio",
+            # "digimon": {
+            #     "command": "uv",
+            #     "args": [
+            #         "run",
+            #         "/code/mcp-servers/digimon-mcp2/src/server.py",
+            #     ],
+            #     "transport": "stdio",
+            # },
+            "remote_digimon": {
+                "url": "https://digimon2.fastmcp.app/mcp",
+                "transport": "http",
+                "headers": {
+                    "Authorization": "Bearer fmcp_MNTsdqK9D1XV37JX5DQqTy88ETB71YRajYWKpOoN8rM"
+                },
             }
         }
     )
